@@ -1,0 +1,130 @@
+.Character {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  overflow: hidden;
+  position: fixed;
+  margin: 1em auto;
+  transform: scale(5);
+  left: 192px;
+  bottom: 5px;
+  animation: moveCat 40s linear infinite;
+  z-index: 9999;
+}
+
+.Character_spritesheet {
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  image-rendering: pixelated; /*Ensures pixelated appearance for sprites*/
+  background-repeat: no-repeat;
+}
+
+.walk_left {
+  left: calc(-94px * var(--pixel-size));
+  top: calc(-39px * var(--pixel-size));
+  animation: moveSpritesheet 0.5s steps(4) infinite;
+}
+
+.walk_right {
+  left: calc(-94px * var(--pixel-size));
+  top: calc(-102px * var(--pixel-size));
+  animation: moveSpritesheet 0.5s steps(4) infinite;
+}
+
+.sit_facingleft{
+  left: calc(-0px * var(--pixel-size));
+  top: calc(-24px * var(--pixel-size));
+  animation: moveSpritesheet_sit 0.3s steps(4) forwards;
+}
+
+.sit_facingright{
+  left: calc(-0px * var(--pixel-size));
+  top: calc(-118px * var(--pixel-size));
+  animation: moveSpritesheet_sit 0.3s steps(4) forwards;
+}
+
+.run_right {
+  left: calc(-156px * var(--pixel-size));
+  top: calc(-101px * var(--pixel-size));
+  animation: moveSpritesheet_run2 0.5s steps(4) infinite;
+}
+
+.run_left {
+  left: calc(-157px * var(--pixel-size));
+  top: calc(-38px * var(--pixel-size));
+  animation: moveSpritesheet_run2 0.5s steps(4) infinite;
+}
+
+.lookaround_left {
+  left: calc(-31px * var(--pixel-size));
+  top: calc(-24px * var(--pixel-size));
+  animation: lookaround 1s steps(4) infinite;
+  animation-direction: alternate;
+}
+
+.lookaround_right {
+  left: calc(-31px * var(--pixel-size));
+  top: calc(-118px * var(--pixel-size));
+  animation: lookaround 1s steps(4) infinite;
+  animation-direction: alternate;
+}
+
+@keyframes lookaround {
+  0% {
+    transform: translate3d(0, 0, 0)
+  }
+  75% {
+    transform: translate3d(-62px, 0px, 0)
+  }
+  75.01% {
+    transform: translate3d(0.12px, -15.65px, 0)
+  }
+  100% {
+    transform: translate3d(0.12px, -15.65px, 0)
+  }
+}
+
+@keyframes moveSpritesheet_run2 {
+  0% {
+    transform: translate3d(0, 0, 0)
+ }
+ 50% {
+    transform: translate3d(-62px, 0px, 0)
+ }
+ 50.01% {
+    transform: translate3d(0, -16px, 0)
+ }
+ 100% {
+   transform: translate3d(-62px, -16px, 0)
+ }
+}
+
+@keyframes moveSpritesheet_sit {
+  0% {
+     transform: translate3d(0px,0,0)
+  }
+  99% {
+     transform: translate3d(-62px,0,0)
+  }
+  100% {
+    transform: translate3d(-16px,-15px,0)
+  }
+}
+
+@keyframes moveSpritesheet {
+  from {
+     transform: translate3d(0px,0,0)
+  }
+  to {
+     transform: translate3d(-62px,0,0)
+  }
+}
+
+@keyframes moveCat {
+  0% { left: 0; }
+  50% { left: calc(100% - 50px); }
+  100% { left: 0; }
+}
+
+/* 16, 32 */

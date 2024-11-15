@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "eCat",
+  "version": "1.0",
+  "description": "A Chrome extension with a character animation.",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "html": ["popup.html"],
+      "js": [
+        "content.js",
+        "aiControlller.js",
+        "interface/chatbox/chatbox.js",
+        "drag.js","interface/interface.js",
+        "interface/skins/skins.js",
+        "interface/size/size.js",
+        "interface/translate/translate.js"
+      ],
+      "css": [
+        "root.css",
+        "styles.css",
+        "interface/chatbox/chatbox.css",
+        "interface/interface.css",
+        "interface/skins/skins.css",
+        "interface/size/size.css",
+        "interface/translate/translate.css"
+      ],
+      "type": "module",
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/pink.png",
+        "assets/orange.png",
+        "assets/gold.png", 
+        "assets/indigo.png",
+        "/assets/calico_0.png",
+        "/assets/red_0.png",
+        "/assets/grey_1.png",
+        "/assets/black_1.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["activeTab", "storage","webNavigation","scripting","tabs"]
+}

@@ -1,0 +1,71 @@
+.translate-interface-layout{
+    margin: 0px;
+    display: grid;
+    padding: 20px; /* Adjust padding for spacing */
+    cursor: default;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+  }
+
+.translate-container {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 285px;
+    position: relative;
+    top: 20px;
+}
+
+.text-input {
+    width: 98%;
+    height: 90px;
+    padding-left: 2px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    resize: none;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.translate-output {
+    width: 100%;
+    height: 90px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.translate-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.translate-button:hover {
+    background-color: #0056b3;
+}
+
+.translateTo-select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,31 @@
+.interface-ui-skin-btn {
+  background-color: var(--black_1-secondary);
+  color: var(--black_1-tertiary);
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 75px;
+}
+
+.cat-frame {
+  background: transparent;
+  transform: scale(5);
+  width: 16px;
+  height: 16px;
+  left: 34px;
+  background-size: contain;
+  position: relative;
+  overflow: hidden;
+}
+
+.catBG{
+  transform: scale(2);
+  position: relative;
+  bottom: -36px; /*Adjust as needed*/
+  right: -94px;
+  width: 250px;
+  background-size: contain;
+  image-rendering: pixelated;
+}
