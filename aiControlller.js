@@ -11,19 +11,19 @@ async function callGoogleAPI(userMessage) {
     };
 
     try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyANaA1E69H7Jo-SDjlNprz1EnSFn2Jd-_0`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=YOUR_APIKEY`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                // Authorization header not typically needed for API key auth unless specified otherwise
+                
             },
             body: JSON.stringify(data)
         });
 
         const responseData = await response.json();
         console.log(responseData.candidates[0].content.parts[0].text)
-        // Extract AI's reply from the API response, assuming it’s in `responseData.reply` (adjust if needed)
-        const apiReply = responseData.candidates[0].content.parts[0].text; // Adjust based on actual API response structure
+        // Extract AI's reply from the API response
+        const apiReply = responseData.candidates[0].content.parts[0].text; 
         displayAPIMessage(apiReply);
     } catch (error) {
         console.error("Error:", error);
@@ -39,7 +39,7 @@ async function callGoogleTranslateAPI(text, targetLanguage) {
     };
     
     try {
-        const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=AIzaSyANaA1E69H7Jo-SDjlNprz1EnSFn2Jd-_0`, {
+        const response = await fetch(`https://translation.googleapis.com/language/translate/v2?key=YOUR_APIKEY`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
